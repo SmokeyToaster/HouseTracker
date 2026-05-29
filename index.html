@@ -456,21 +456,12 @@ const TOD_META = {
   'Ongoing':        { icon: '📅' },
 };
 
-// ─── FIREBASE CONFIG ──────────────────────────────────────
-// STEP 1: Create a free Firebase project at https://console.firebase.google.com
-// STEP 2: Add a Realtime Database, set rules to public (see setup guide below)
-// STEP 3: Replace the config object below with your project's config
 const FB_CONFIG = {
-  apiKey: "REPLACE_WITH_YOUR_API_KEY",
-  authDomain: "REPLACE_WITH_YOUR_AUTH_DOMAIN",
-  databaseURL: "REPLACE_WITH_YOUR_DATABASE_URL",
-  projectId: "REPLACE_WITH_YOUR_PROJECT_ID",
+  apiKey: "AIzaSyDpRAQ54Do81lCqUFxtAQDBaElhY14sICg",
+  authDomain: "housetracker-5132c.firebaseapp.com",
+  databaseURL: "https://housetracker-5132c-default-rtdb.firebaseio.com",
+  projectId: "housetracker-5132c",
 };
-const FB_CONFIGURED = FB_CONFIG.databaseURL && !FB_CONFIG.databaseURL.includes('REPLACE');
-
-let db = null;
-let fbRef = null;
-
 // ─── STATE ────────────────────────────────────────────────
 // S holds local mirror; Firebase is source of truth when configured
 let S = {
