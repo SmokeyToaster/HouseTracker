@@ -507,8 +507,9 @@ function initFirebase() {
     // Fall back to localStorage completions
     try {
       const saved = JSON.parse(localStorage.getItem('ht_completions'));
-      if (saved) S.completions = saved;
+      if (saved) S.completions = Object.assign(S.completions, saved);
     } catch(e){}
+    // Still render the app in local mode
     return;
   }
   try {
@@ -835,6 +836,11 @@ function copyScript(){
     ['copy-ok-app','copy-ok-report'].forEach(id=>{ const el=document.getElementById(id); if(el){el.style.display='inline';setTimeout(()=>el.style.display='none',2500);} });
   });
 }
+
+// ─── INIT ─────────────────────────────────────────────────
+(function init(){
+  initFirebase();
+})();
 </script>
 </body>
 </html>
